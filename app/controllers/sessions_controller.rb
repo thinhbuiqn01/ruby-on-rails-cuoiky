@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by_email(params[:email])
     
-    if user.present? && params[:password] 
+    if user.present? && params[:password]
       session[:user_id] = user.id
       if user.status === 0
         redirect_to "/"

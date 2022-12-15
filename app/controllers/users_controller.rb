@@ -25,9 +25,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
      
     respond_to do |format|
-      if @user.save 
-        sessions[:user_id] = @user.id
-        redirect_to root_path, notice: 'Successfully created account'
+      if @user.save  
+        redirect_to "/login", notice: 'Successfully created account'
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @user.errors, status: :unprocessable_entity }
