@@ -28,20 +28,20 @@
 
   <div>
     <%= form.label :password, style: "display: block" %>
-    <%= form.text_field :password %>
+    <%= password_field_tag :password %>
   </div>
 
   <div style="display: none">
     <%= form.label :roles, style: "display: block" %>
-    <%= form.number_field :roles %>
+    <%= form.text_field :roles %>
   </div>
 
   <div style="display: none">
     <%= form.label :status, style: "display: block" %>
-    <%= form.number_field :status %>
+    <%= form.text_field :status %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="btn-submit-signup">
+    <%=  form.submit %>
   </div>
 <% end %>

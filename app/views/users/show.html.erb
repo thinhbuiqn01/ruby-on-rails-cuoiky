@@ -1,16 +1,25 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @user %>
-
-<div>
-  <div class="col-lg-offset-3 col-lg-6">
-    <div class="text-left">
-      <label><%= @user.name %></label>
-    </div>
-  <%= link_to "Logout", logout_path, method: :delete %> 
+<p style="color: green"><%= notice %></p> 
+<div class="card text-center">
+  <div class="card-header">
+    <h3> <%= @user.username %></h3>
   </div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
+  <div class="card-body">
+    <h5 class="card-title"><%= @user.name %></h5>
+    <p class="card-text"><%= @user.email %></p>
+    
+    <div class="btn btn-outline-danger"><%= link_to "Edit infomation", edit_user_path(@user), style: "text-decoration: none;"%></div>
+  </div>
+  <div class="card-footer text-muted">
+    <span>Day start: <%= @user.created_at %></span>
+  </div>
+</div>
+
+<div> 
   <%= link_to "Back to users", users_path %>
 
-  <%= button_to "Destroy this user", @user, method: :delete %>
+  <%
+=begin%>
+ <%= button_to "Destroy this user", @user, method: :delete %> 
+<%
+=end%>
 </div>

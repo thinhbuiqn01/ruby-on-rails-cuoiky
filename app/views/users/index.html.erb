@@ -1,6 +1,16 @@
 <h1>Listing users</h1>
-<%= link_to 'New User', new_user_path %>
-<%= text_field_tag(class:'form-control', placeholder: 'User Name' )%>
+<%= link_to 'New User', new_user_path, style: "text-decoration: none;" %>
+
+<%= form_tag users_path, :method => "get" do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Enter..." %>
+  <%
+=begin%>
+ <%= submit_tag "Search" %> 
+<%
+=end%>
+<% end %>
+
+
 <table class="table">
   <thead>
     <tr>
